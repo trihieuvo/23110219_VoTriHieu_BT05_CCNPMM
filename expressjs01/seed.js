@@ -34,6 +34,7 @@ const seedData = async () => {
                 ],
                 stock: 50,
                 sold: 120,
+                views: 350,
                 category: categories[0]._id,
                 isNewProduct: true,
                 isFeatured: true
@@ -50,6 +51,7 @@ const seedData = async () => {
                 ],
                 stock: 100,
                 sold: 250,
+                views: 620,
                 category: categories[1]._id,
                 isNewProduct: false,
                 isFeatured: true
@@ -66,6 +68,7 @@ const seedData = async () => {
                 ],
                 stock: 20,
                 sold: 45,
+                views: 180,
                 category: categories[2]._id,
                 isNewProduct: false,
                 isFeatured: false
@@ -82,6 +85,7 @@ const seedData = async () => {
                 ],
                 stock: 10,
                 sold: 5,
+                views: 90,
                 category: categories[0]._id,
                 isNewProduct: true,
                 isFeatured: false
@@ -98,6 +102,7 @@ const seedData = async () => {
                 ],
                 stock: 15,
                 sold: 30,
+                views: 240,
                 category: categories[1]._id,
                 isNewProduct: true,
                 isFeatured: true

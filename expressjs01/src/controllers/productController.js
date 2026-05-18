@@ -68,7 +68,13 @@ const getHomeProducts = async (req, res) => {
 const getProductDetail = async (req, res) => {
     try {
         const { id } = req.params;
-        const product = await Product.findById(id).populate('category', 'name slug');
+        // Tăng views lên 1 mỗi khi gọi chi tiết sản phẩm
+        const product = await Product.findByIdAndUpdate(
+            id,
+            { $inc: { views: 1 } },
+            { new: true }
+        ).populate('category', 'name slug');
+
         if (!product) return res.status(404).json({ message: 'Product not found' });
         return res.status(200).json(product);
     } catch (error) {
@@ -97,7 +103,7 @@ const getRelatedProducts = async (req, res) => {
 // ===== TOP 10 BÁN CHẠY =====
 const getTopSellingProducts = async (req, res) => {
     try {
-        const data = await Product.find({ sold: { $exists: true } })
+        const data = await Product.find({})
             .sort({ sold: -1 })
             .limit(10)
             .populate('category', 'name slug');
@@ -111,7 +117,7 @@ const getTopSellingProducts = async (req, res) => {
 // ===== TOP 10 XEM NHIỀU =====
 const getMostViewedProducts = async (req, res) => {
     try {
-        const data = await Product.find({ views: { $exists: true } })
+        const data = await Product.find({})
             .sort({ views: -1 })
             .limit(10)
             .populate('category', 'name slug');
