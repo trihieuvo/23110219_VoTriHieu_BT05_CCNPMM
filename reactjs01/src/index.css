@@ -49,3 +49,14 @@
   opacity: 1 !important;
   border-color: #4f46e5 !important;
 }
+
+/* ===== Hide Scrollbar (dùng cho Horizontal Scroll Top 10) ===== */
+@layer utilities {
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE & Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;             /* Chrome, Safari */
+  }
+}
