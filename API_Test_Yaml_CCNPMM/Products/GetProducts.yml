@@ -5,7 +5,14 @@ info:
 
 http:
   method: GET
-  url: http://localhost:8080/v1/api/products?keyword=Sony&category=6a0426a65e3811bbeb85263e&minPrice=1000000&maxPrice=5000000&sort=price_asc
+  url: http://localhost:8080/v1/api/products?keyword=sony&category=6a042eeb9cb64ba5f0ece0b1
+  params:
+    - name: keyword
+      value: sony
+      type: query
+    - name: category
+      value: 6a042eeb9cb64ba5f0ece0b1
+      type: query
   auth: inherit
 
 settings:
